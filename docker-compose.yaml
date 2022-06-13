@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  vuejs-app:
+    image: node:14.19.3
+    container_name: vuejs-app
+    working_dir: /app
+    ports:
+    - '8088:8088'
+    volumes:
+    - .:/app
+    command: > 
+      /bin/sh -c "yarn install
+      && yarn serve"
+    network_mode: host
